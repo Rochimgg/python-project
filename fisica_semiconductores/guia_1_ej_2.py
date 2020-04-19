@@ -3,7 +3,7 @@
 import funciones_calculos_guia_1 as fun
 
 
-# a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T =27◦C)
+# a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T = 27◦C)
 # b) Repetir para T = 0◦C y T = 100◦C
 
 def main():

@@ -4,8 +4,8 @@ import funciones_calculos_guia_1 as fun
 import diccionario_constantes as dic
 
 
-# a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T =27◦C)
-# b) Repetir para T = 0◦C y T = 100◦C
+# Determinar la concentración intrínseca de portadores (ni) de los siguientes semiconductores
+# a temperatura ambiente (T = 27◦C)
 
 def main():
     # Germanio a temperatura ambiente
