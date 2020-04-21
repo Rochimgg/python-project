@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 
-import funciones_calculos_guia_1 as fun
+from funciones_calculos_guia_1 import concentration_int
 import diccionario_constantes as dic
 
 
@@ -13,11 +13,17 @@ def main():
     mef_n = 1.1 * dic.m_0
     T = 273 + 27
     Eg = 1.12
-    fun.concentration_int(mef_n, mef_p, T, Eg)
+
+    # CONSULTAR
+    mef_p = 0.56 * dic.m_0
+    mef_n = 1.1 * dic.m_0
+    T = 300
+    Eg = 1.11
+    concentration_int(mef_n, mef_p, T, Eg)
     T = 0
-    fun.concentration_int(mef_n, mef_p, T, Eg)
+    concentration_int(mef_n, mef_p, T, Eg)
     T = 273
-    fun.concentration_int(mef_n, mef_p, T, Eg)
+    concentration_int(mef_n, mef_p, T, Eg)
 
 
 if __name__ == '__main__':
