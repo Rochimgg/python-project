@@ -1,15 +1,20 @@
 #!/usr/local/bin/python3
 import numpy as np
-import math
 import diccionario_constantes as cte
 from funciones_calculos_guia_1 import concentration_int
 
+# n0 y p0 son las concentraciones volumétricas de electrones y huecos libres
+# Nc, Nv:  densidad de estados efectivos en las bandas de conducción y valencia
+# Ec, Ev: energía del nivel inferior de la banda de conducción y del superior en la de valencia.
+# EF: energía del nivel de Fermi: EF = (Ec + Ev)/2, para semiconductores intrínsecos.
+
 
 def main():
-    L = 3  # mm
-    r = 0.5  # mm
-    vol = np.pi ** 2 * L  # mm^3
+    L = 3e-3  # cm
+    r = 5e-4  # cm
+    S = np.pi ** 2 * r  # cm^2
     T = 300  # K
+    kT = cte.k * T
 
     # datos para Germanio
     Eg = 0.66  # eV
@@ -17,50 +22,70 @@ def main():
     mef_p = 0.29 * cte.m0  # kg
     mu_n = 3900  # cm^2V^-1s^-1  movilidad electrones
     mu_p = 2300  # cm^2V^-1s^-1  movilidad huecos
-    ni_Ge = 2.36e13  # cm^-3
-
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
-
-    # n0 y p0 son las concentraciones volumétricas de electrones y huecos libres
-    # Nc, Nv:  densidad de estados efectivos en las bandas de conducción y valencia
-    # Ec, Ev: energía del nivel inferior de la banda de conducción y del superior en la de valencia.
-    # EF: energía del nivel de Fermi: EF = (Ec + Ev)/2, para semiconductores intrínsecos.
-
-    # densidad de carga volumetrica C/cm^3
-    # rho = q(Nd - n0)
-
-    # np = ni^2
-    # en regimen intrínseco ni = n0 = p0
 
     # calcular la concentración de electrones y huecos libres
-
+    # en regimen intrínseco ni = n0 = p0
+    ni_Ge = concentration_int(mef_n, mef_p, T, Eg)  # cm^-3
 
     # calcular la conductividad del material
 
+    # conductividad intrinseca en equilibrio
+    # sigma = q(n0*mu_n + p0*mu_p) = q(mu_n + mu_p)*ni
+    # densidad de carga volumetrica C/cm^3
+    # rho = q(Nd - n0) = sigma^-1
+    sigma = cte.q * (mu_n + mu_p) * ni_Ge  # cm^-1 S
+
+    print(cte.RESULT_FORMAT.format(ni_Ge))
+    print(cte.RESULT_FORMAT.format(sigma))
+
+    # Si el material fuese Silicio (Si) dopado uniformememnte con fósforo (P)
+    # P es un elemento del grupo V (donores) Deberia buscar la concentracion de
+    # atomos donores para obtener la misma conductividad
 
     # datos para Silicio
+
     ni_Si = 1.5e10  # cm^-3
-    Nv = 1.04e19  # cm^-3
-    Nc = 2.8e19  # cm^-3
     mu_n = 1350  # cm^2V^-1s^-1  movilidad electrones
     mu_p = 500  # cm^2V^-1s^-1  movilidad huecos
-    kT = cte.k * T
-    mef_n = 1.1 * cte.m0  # kg
-    mef_p = 0.59 * cte.m0  # kg
+    Nd_Si = sigma / cte.q / mu_n  # cm^-3
 
-    Eg = 1.1 * cte.q # eV
-    masa = math.sqrt(mef_n * mef_p)
-    dospi = 2 * math.pi
-    kT = cte.k * T
-    planck_cuadrado = cte.h ** 2
+    print(cte.RESULT_FORMAT.format(Nd_Si))
 
-    ni = math.sqrt(Nc*Nv*math.exp(-Eg/(2*kT)))
+    # Calcular el valor de resistencia (R) para la geometria del problema.
 
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
-#GaAS
-    mef_n = 0.068 * cte.m0  # kg
-    mef_p = 0.5 * cte.m0  # kg
-    concentration_int(mef_n, mef_p, T, 1.43)
+    rho = sigma ** (-1)  # Ω cm
+    R = rho * L / S  # Ω
+
+    print(cte.RESULT_FORMAT.format(R))
+
+    # Calcular la corriente que circula al aplicar una tensión de 3V entre las caras del cilindro.
+    # ¿Cuánto es la contribución de corriente de electrones y corriente de huecos?
+    I = 3/R  # A Por Ohm
+    print(cte.RESULT_FORMAT.format(I))
+
+    # Considero el Silicio dopado uniformemente, por lo que las corrientes de difusion
+    # son despreciables en este caso, solo tomare en cuenta las corrientes de arrastre
+    # El campo electrico tiene direccion correspondiente con la longitud del alambre
+
+    E = 3 * L  # V * long
+    dndx = 0
+    dpdx = 0
+    p = ni_Si**2 / Nd_Si
+    n = Nd_Si
+    Dn = kT*mu_n/cte.q
+    Dp = kT*mu_p/cte.q
+    Jna = cte.q * mu_n * n * E
+    Jnd = cte.q * Dn * dndx
+    Jn = Jna + Jnd
+    Jpa = cte.q * mu_p * p * E
+    Jpd = - cte.q * Dp * dpdx
+    Jp = Jpa + Jpd
+    J = Jn + Jp
+
+    print(cte.RESULT_FORMAT.format(Jn))
+    print(cte.RESULT_FORMAT.format(Jp))
+    print(cte.RESULT_FORMAT.format(J))
+
 
 if __name__ == '__main__':
     main()
