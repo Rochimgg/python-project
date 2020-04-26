@@ -4,8 +4,8 @@ import os, sys
 
 import numpy as np
 
-A = np.array([[12, -2, 0], [-2, 7, -1], [0, -1, 6]])
-B = np.array([[6], [-8], [2]])
+A = np.array([[5/12, -1/6, -1/12], [-1/6, 5/9, -1/18], [-1/12, -1/18, 17/36]])
+B = np.array([[5], [0], [0]])
 X = np.linalg.inv(A).dot(B)
 A_inv = np.linalg.inv(A)
 decim_inv = 4
@@ -31,20 +31,20 @@ def main():
           '$\\left(\\begin{matrix} \n' +
           str(B[0][0]) + '\\\\ \n' +
           str(B[1][0]) + '\\\\ \n' +
-          str(B[2][0]) + '\\\\ \n' 
-          '\\end{matrix}\\right)= \n' +
+          str(B[2][0]) + '\\\\ \n'
+                         '\\end{matrix}\\right)= \n' +
           '\\left(\\begin{matrix} \n' +
           str(A[0][0]) + ' & ' + str(A[0][1]) + ' & ' + str(A[0][2]) + '\\\\ \n' +
           str(A[1][0]) + ' & ' + str(A[1][1]) + ' & ' + str(A[1][2]) + '\\\\ \n' +
-          str(A[2][0]) + ' & ' + str(A[2][1]) + ' & ' + str(A[2][2]) + '\\\\ \n' 
-          '\\end{matrix}\\right)\\hspace{5pt} \n'
-          '\\left(\\begin{matrix} \n'
-          'i_1\\\\ \n'
-          'i_2\\\\ \n'
-          'i_3\\\\ \n'
-          '\\end{matrix}\\right)$ \\\\ \n'
-          'hago la inversa y calculo las corrientes\\\\ \n'
-          '$ \\left(\\begin{matrix} \n' +
+          str(A[2][0]) + ' & ' + str(A[2][1]) + ' & ' + str(A[2][2]) + '\\\\ \n'
+                                                                       '\\end{matrix}\\right)\\hspace{5pt} \n'
+                                                                       '\\left(\\begin{matrix} \n'
+                                                                       'i_1\\\\ \n'
+                                                                       'i_2\\\\ \n'
+                                                                       'i_3\\\\ \n'
+                                                                       '\\end{matrix}\\right)$ \\\\ \n'
+                                                                       'hago la inversa y calculo las corrientes\\\\ \n'
+                                                                       '$ \\left(\\begin{matrix} \n' +
           str(round(A_inv[0][0], decim_inv)) + ' & ' + str(round(A_inv[0][1], decim_inv)) + ' & ' + str(round(A_inv[0][2], decim_inv)) + '\\\\ \n' +
           str(round(A_inv[1][0], decim_inv)) + ' & ' + str(round(A_inv[1][1], decim_inv)) + ' & ' + str(round(A_inv[1][2], decim_inv)) + '\\\\ \n' +
           str(round(A_inv[2][0], decim_inv)) + ' & ' + str(round(A_inv[2][1], decim_inv)) + ' & ' + str(round(A_inv[2][2], decim_inv)) + '\\\\ \n' +
@@ -53,7 +53,7 @@ def main():
           str(B[0][0]) + '\\\\ \n' +
           str(B[1][0]) + '\\\\ \n' +
           str(B[2][0]) + '\\\\ \n'
-          '\\end{matrix}\\right)= \n' +
+                         '\\end{matrix}\\right)= \n' +
           '\\left(\\begin{matrix} \n'
           'i_1\\\\ \n'
           'i_2\\\\ \n'
@@ -69,7 +69,7 @@ def main():
           str(round(X[0][0], decim_res)) + ' A \\\\ \n' +
           str(round(X[1][0], decim_res)) + ' A \\\\ \n' +
           str(round(X[2][0], decim_res)) + ' A \\\\ \n'
-          '\\end{matrix}\\right)$ \n')
+                                           '\\end{matrix}\\right)$ \n')
 
     print(X)
 
