@@ -13,7 +13,7 @@ calcular = {
               "unidad_inversa": unidades["siemens"],
               "formato": "{:.4g}"},
         "X": {"unidad": unidades["ampere"],
-              "formato": "{:.4g}"},
+              "formato": "{}"},
         "b": {"unidad": unidades["volt"],
               "formato": "{:.4g}"}
     },
@@ -24,8 +24,8 @@ calcular = {
               "unidad_inversa": unidades["siemens"],
               "formato": "{:.4g}"},
         "X": {"unidad": unidades["volt"],
-              "formato": "{:.4e}"},
+              "formato": "{}"},
         "b": {"unidad": unidades["ampere"],
-              "formato": "{:.4e}"},
+              "formato": "{:.4g}"},
     }
 }
