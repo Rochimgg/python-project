@@ -12,7 +12,7 @@ from funciones_calculos_guia_1 import concentration_int
 def main():
     L = 3e-3  # cm
     r = 5e-4  # cm
-    S = np.pi ** 2 * r  # cm^2
+    S = np.pi * r ** 2 # cm^2
     T = 300  # K
     kT = cte.k * T
 
@@ -33,7 +33,7 @@ def main():
     # sigma = q(n0*mu_n + p0*mu_p) = q(mu_n + mu_p)*ni
     # densidad de carga volumetrica C/cm^3
     # rho = q(Nd - n0) = sigma^-1
-    sigma = cte.q * (mu_n + mu_p) * ni_Ge  # cm^-1 S
+    sigma = cte.q * (mu_n + mu_p) * ni_Ge  # S cm^-1
 
     print(cte.RESULT_FORMAT.format(ni_Ge))
     print(cte.RESULT_FORMAT.format(sigma))
@@ -67,7 +67,7 @@ def main():
     # son despreciables en este caso, solo tomare en cuenta las corrientes de arrastre
     # El campo electrico tiene direccion correspondiente con la longitud del alambre
 
-    E = 3 * L  # V * long
+    E = 3 / L  # V / long
     dndx = 0
     dpdx = 0
     p = ni_Si**2 / Nd_Si
@@ -80,11 +80,17 @@ def main():
     Jpa = cte.q * mu_p * p * E
     Jpd = - cte.q * Dp * dpdx
     Jp = Jpa + Jpd
-    J = Jn + Jp
+    J = Jn + Jp  #A/cm^2
+    In = Jn * S
+    Ip = Jp * S
+    I = J * S
 
     print(cte.RESULT_FORMAT.format(Jn))
     print(cte.RESULT_FORMAT.format(Jp))
     print(cte.RESULT_FORMAT.format(J))
+    print(cte.RESULT_FORMAT.format(In))
+    print(cte.RESULT_FORMAT.format(Ip))
+    print(cte.RESULT_FORMAT.format(I))
 
 
 if __name__ == '__main__':
