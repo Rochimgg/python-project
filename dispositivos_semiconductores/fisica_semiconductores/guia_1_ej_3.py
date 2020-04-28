@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-from funciones_calculos_guia_1 import concentration_int
 import diccionario_constantes as cte
+from funciones_calculos_guia_1 import concentration_int
 
 
 # Determinar la concentración intrínseca de portadores (ni) de los siguientes semiconductores

@@ -17,7 +17,7 @@ def main():
     print("n0 = " + str(n0))
 
     # ¿Cuál es la concentración de huecos p0 (cm−3) a temperatura ambiente?
-    p0 = ni**2/ND
+    p0 = ni ** 2 / ND
     print("p0 = " + str(p0))
 
     # ¿Cómo cambian las concentraciones de portadores de carga n0 y p0 si el dopaje tiene una concentración
@@ -28,5 +28,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

@@ -11,7 +11,7 @@ def main():
     print("NA = " + str(NA))
 
     # ¿Cuál es la concentración de electrones n0 (cm−3) a temperatura ambiente?
-    n0 = ni**2/NA
+    n0 = ni ** 2 / NA
     print("n0 = " + str(n0))
 
     # ¿Cuál es la concentración de huecos p0 (cm−3) a temperatura ambiente?

@@ -1,9 +1,10 @@
 #!/usr/local/bin/python3
 
-import os, sys
+import os
+import sys
 
-import numpy as np
 import constants_dictionary as dic
+import numpy as np
 from functions import *
 
 

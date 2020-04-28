@@ -1,14 +1,13 @@
 #!/usr/local/bin/python3
 
-from funciones_calculos_guia_1 import concentration_int
 import diccionario_constantes as cte
+from funciones_calculos_guia_1 import concentration_int
 
 
 # a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T = 27◦C)
 # b) Repetir para T = 0◦C y T = 100◦C
 
 def main():
-
     mef_p = 0.56 * cte.m0
     mef_n = 1.1 * cte.m0
     T = 273 + 27

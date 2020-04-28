@@ -4,7 +4,7 @@ import numpy as np
 
 from rotex.desarrollo2tex import diccionario_sistemas_ecuaciones as dic
 
-B = np.array([[1/6], [1], [0], [0]])
+B = np.array([[1 / 6], [1], [0], [0]])
 
 
 def bmatrix(A, unit="", form="{}"):
@@ -19,7 +19,7 @@ def bmatrix(A, unit="", form="{}"):
     return ' \n'.join(line)
 
 
-def varmatrix(x = "x", dim = 3):
+def varmatrix(x="x", dim=3):
     if dim == 3:
         if x == "x":
             return bmatrix([["x"], ["y"], ["z"]])
@@ -27,7 +27,7 @@ def varmatrix(x = "x", dim = 3):
             return bmatrix([["X"], ["Y"], ["Z"]])
     var = []
     for i in range(dim):
-        var.append([f"{x}_{i+1}"])
+        var.append([f"{x}_{i + 1}"])
     return bmatrix(var)
 
 

@@ -1,7 +1,8 @@
 #!/usr/local/bin/python3
-import numpy as np
 import diccionario_constantes as cte
+import numpy as np
 from funciones_calculos_guia_1 import concentration_int
+
 
 # n0 y p0 son las concentraciones volumétricas de electrones y huecos libres
 # Nc, Nv:  densidad de estados efectivos en las bandas de conducción y valencia
@@ -12,7 +13,7 @@ from funciones_calculos_guia_1 import concentration_int
 def main():
     L = 3e-3  # cm
     r = 5e-4  # cm
-    S = np.pi * r ** 2 # cm^2
+    S = np.pi * r ** 2  # cm^2
     T = 300  # K
     kT = cte.k * T
 
@@ -60,7 +61,7 @@ def main():
 
     # Calcular la corriente que circula al aplicar una tensión de 3V entre las caras del cilindro.
     # ¿Cuánto es la contribución de corriente de electrones y corriente de huecos?
-    I = 3/R  # A Por Ohm
+    I = 3 / R  # A Por Ohm
     print(cte.RESULT_FORMAT.format(I))
 
     # Considero el Silicio dopado uniformemente, por lo que las corrientes de difusion
@@ -70,17 +71,17 @@ def main():
     E = 3 / L  # V / long
     dndx = 0
     dpdx = 0
-    p = ni_Si**2 / Nd_Si
+    p = ni_Si ** 2 / Nd_Si
     n = Nd_Si
-    Dn = kT*mu_n/cte.q
-    Dp = kT*mu_p/cte.q
+    Dn = kT * mu_n / cte.q
+    Dp = kT * mu_p / cte.q
     Jna = cte.q * mu_n * n * E
     Jnd = cte.q * Dn * dndx
     Jn = Jna + Jnd
     Jpa = cte.q * mu_p * p * E
     Jpd = - cte.q * Dp * dpdx
     Jp = Jpa + Jpd
-    J = Jn + Jp  #A/cm^2
+    J = Jn + Jp  # A/cm^2
     In = Jn * S
     Ip = Jp * S
     I = J * S

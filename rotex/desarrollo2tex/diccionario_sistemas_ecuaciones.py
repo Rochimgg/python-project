@@ -3,7 +3,6 @@ unidades = {
     "siemens": r"\mbox{S}",
     "ampere": r"\mbox{A}",
     "volt": r"\mbox{V}",
-
 }
 
 calcular = {
