@@ -1,7 +1,8 @@
 #!/usr/local/bin/python3
-import diccionario_constantes as cte
 import numpy as np
-from funciones_calculos_guia_1 import concentration_int
+
+import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
+from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia_1 import concentration_int
 
 
 # n0 y p0 son las concentraciones volumétricas de electrones y huecos libres

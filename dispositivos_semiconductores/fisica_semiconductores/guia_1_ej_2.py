@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-import diccionario_constantes as cte
-from funciones_calculos_guia_1 import concentration_int
+import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
+from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia_1 import concentration_int
 
 
 # a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T = 27◦C)

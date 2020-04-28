@@ -2,7 +2,7 @@
 
 import math
 
-import diccionario_constantes as cte
+import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
 
 
 def concentration_int(mef_n, mef_p, T, Eg):
