@@ -24,6 +24,7 @@ def main():
     # NA = 10e5 cm−3?
     # Si las concentraciones de NA cambian a 10e5, ahora son comparables con las concentraciones intrinsecas,
     # por lo que no se puede asegurar que p0 = NA
+    # TODO: plantear las ecuaciones para esto
 
 
 if __name__ == '__main__':

@@ -24,6 +24,7 @@ def main():
     # ND = 10e8 cm−3?
     # Si las concentraciones de ND cambian a 10e8, ahora son comparables con las concentraciones intrinsecas,
     # por lo que no se puede asegurar que n0 = ND
+    # TODO: plantear las ecuaciones para esto
 
 
 if __name__ == '__main__':
