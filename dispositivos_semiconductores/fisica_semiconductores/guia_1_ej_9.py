@@ -5,7 +5,17 @@
 
 
 def main():
-    pass
+    Na = 1e14  # cm^-3
+    Nd = 0  # cm^-3
+    ni_Ge = 2.36e13  # cm^-3
+
+    # n0 - ni^2/n0 = Nd - Na
+    n0_Ge = (Nd-Na)/2 + math.sqrt(((Nd-Na)/2)**2 + ni_Ge**2)
+    p0_Ge = ni_Ge**2/n0_Ge
+
+    # si T = (50 + 273)K
+
+    # si T = (150 + 273)K
 
 
 if __name__ == '__main__':

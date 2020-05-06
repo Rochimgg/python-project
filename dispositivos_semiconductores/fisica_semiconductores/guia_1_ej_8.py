@@ -1,6 +1,6 @@
 
 #  Se tiene una oblea de Silicio a temperatura ambiente dopada con una concentración de átomos aceptores
-#  de NA = 1014 cm−3. Se agregan átomos donores con una concentración de ND = 7.5 × 1015 cm−3 en una región de la oblea.
+#  de NA = 10^14 cm−3. Se agregan átomos donores con una concentración de ND = 7.5 × 1015 cm−3 en una región de la oblea.
 
 # a) Esta región de la oblea, ¿es tipo n o tipo p?
 # b) ¿Cuál es la concentración de electrones n0 (cm−3) a temperatura ambiente en esta región?
