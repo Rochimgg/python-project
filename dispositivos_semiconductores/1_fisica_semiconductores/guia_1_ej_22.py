@@ -2,6 +2,7 @@
 # dopado con NA = 1.5 × 10^16 at/cm^3 cuando se aplica una diferencia de potencial de 1 V.
 # Datos: µn = 1200 cm^2/(Vs) y µp = 420 cm^2/(Vs).
 
+
 def main():
     pass
 
