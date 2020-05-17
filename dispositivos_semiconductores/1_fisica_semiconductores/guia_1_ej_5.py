@@ -4,9 +4,9 @@
 def main():
     # Una oblea de Silicio a temperatura ambiente está dopada con átomos donores con una concentración
     # de ND = 10^15 cm−3
-    ND = 10e15
+    ND = 1e15
     T = 273 + 27
-    ni = 10e9
+    ni = 1e9
 
     print("ND = " + str(ND))
 
@@ -21,8 +21,8 @@ def main():
     print("p0 = " + str(p0))
 
     # ¿Cómo cambian las concentraciones de portadores de carga n0 y p0 si el dopaje tiene una concentración
-    # ND = 10e8 cm−3?
-    # Si las concentraciones de ND cambian a 10e8, ahora son comparables con las concentraciones intrinsecas,
+    # ND = 1e8 cm−3?
+    # Si las concentraciones de ND cambian a 1e8, ahora son comparables con las concentraciones intrinsecas,
     # por lo que no se puede asegurar que n0 = ND
     # TODO: plantear las ecuaciones para esto
 

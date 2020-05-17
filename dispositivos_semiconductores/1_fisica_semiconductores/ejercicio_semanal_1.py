@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 import numpy as np
 
-import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
+import dispositivos_semiconductores.diccionario_constantes as cte
 from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia_1 import concentration_int
 
 

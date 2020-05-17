@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
-from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia_1 import concentration_int
+import dispositivos_semiconductores.diccionario_constantes as cte
+from dispositivos_semiconductores.funciones_calculos import ni
 
 
 # a) Determinar la concentración intrínseca de portadores (ni) del silicio a temperatura ambiente (T = 27◦C)
@@ -12,11 +12,11 @@ def main():
     mef_n = 1.1 * cte.m0
     T = 273 + 27
     Eg = 1.12
-    print(cte.RESULT_FORMAT.format((concentration_int(mef_n, mef_p, T, Eg))))
+    print(cte.RESULT_FORMAT.format((ni(mef_n, mef_p, T, Eg))))
     T = 0
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
+    print(cte.RESULT_FORMAT.format(ni(mef_n, mef_p, T, Eg)))
     T = 273
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
+    print(cte.RESULT_FORMAT.format(ni(mef_n, mef_p, T, Eg)))
 
 
 if __name__ == '__main__':

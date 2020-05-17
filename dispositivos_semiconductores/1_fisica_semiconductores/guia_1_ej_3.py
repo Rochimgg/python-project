@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-import dispositivos_semiconductores.fisica_semiconductores.diccionario_constantes as cte
-from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia_1 import concentration_int
+from dispositivos_semiconductores.diccionario_constantes import *
+from dispositivos_semiconductores.funciones_calculos import ni
 
 
 # Determinar la concentración intrínseca de portadores (ni) de los siguientes semiconductores
@@ -9,17 +9,18 @@ from dispositivos_semiconductores.fisica_semiconductores.funciones_calculos_guia
 
 def main():
     # Germanio a temperatura ambiente
-    mef_n = 0.56 * cte.m0
-    mef_p = 0.29 * cte.m0
-    T = 273 + 27
-    Eg = 1.12
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
+    mef_n = Ge["mef_n"]
+    mef_p = Ge["mef_p"]
+    T = T_amb
+    Eg = Ge["Eg"]
+    print(RESULT_FORMAT.format(ni(mef_n, mef_p, T, Eg)))
+
     # Arseniuro de Galio a temperatura ambiente
-    mef_n = 0.068 * cte.m0
-    mef_p = 0.47 * cte.m0
-    T = 273 + 27
-    Eg = 1.12
-    print(cte.RESULT_FORMAT.format(concentration_int(mef_n, mef_p, T, Eg)))
+    mef_n = GaAs["mef_n"]
+    mef_p = GaAs["mef_p"]
+    T = T_amb
+    Eg = GaAs["Eg"]
+    print(RESULT_FORMAT.format(ni(mef_n, mef_p, T, Eg)))
 
 
 if __name__ == '__main__':

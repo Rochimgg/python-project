@@ -4,9 +4,9 @@
 def main():
     # Una oblea de Silicio a temperatura ambiente está dopada con átomos aceptores con una concentración
     # de ND = 10^14 cm−3
-    NA = 10e14
+    NA = 1e14
     T = 273 + 27
-    ni = 10e9
+    ni = 1e9
 
     print("NA = " + str(NA))
 
@@ -21,8 +21,8 @@ def main():
     print("p0 = " + str(p0))
 
     # ¿Cómo cambian las concentraciones de portadores de carga n0 y p0 si el dopaje tiene una concentración
-    # NA = 10e5 cm−3?
-    # Si las concentraciones de NA cambian a 10e5, ahora son comparables con las concentraciones intrinsecas,
+    # NA = 1e5 cm−3?
+    # Si las concentraciones de NA cambian a 1e5, ahora son comparables con las concentraciones intrinsecas,
     # por lo que no se puede asegurar que p0 = NA
     # TODO: plantear las ecuaciones para esto
 
